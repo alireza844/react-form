@@ -39,8 +39,8 @@ const SignUp = () => {
     const submitHandler = (event) => {
         event.preventDefault();
         if(!Object.keys(errors).length) {
-            notify("you sign in succeussfully", "success")
             console.log(data)
+            notify("you sign in succeussfully", "success")
         } else {
             setTouched({
                 name: true,
