@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import { Link } from 'react-router-dom'
+
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -20,7 +22,7 @@ const SignUp = () => {
     const [touched, setTouched] = useState({})
 
     useEffect(() => {
-        setErrors(validate(data))
+        setErrors(validate(data, "signup"))
         console.log(errors)
     },[data, touched])
 
@@ -139,7 +141,7 @@ const SignUp = () => {
                         {errors.isAccepted && touched.isAccepted && <span>{errors.isAccepted}</span>}
                     </div>
                     <div className='flex justify-between p-1 item-center w-8/12 -mt-8'>
-                        <a href='#' className='border-2 border-slate-600 p-2 rounded-xl hover:bg-slate-600 hover:border-2 hover:border-slate-400 transition-all'>Login</a>
+                        <Link to='/login' className='border-2 border-slate-600 p-2 rounded-xl hover:bg-slate-600 hover:border-2 hover:border-slate-400 transition-all'>Login</Link>
                         <button type="submit" className='bg-slate-600 p-2 rounded-xl hover:bg-slate-400 transition-all'>Sign Up</button>
                 </div>
             </form>
