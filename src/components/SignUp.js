@@ -53,65 +53,73 @@ const SignUp = () => {
         }
     }
 
+    const styles = {
+        boxContainerStyles: 'flex flex-col h-24 text-lg w-2/3',
+        inputStyles: 'bg-slate-700 focus:bg-slate-600 w-full m-auto border rounded-md p-1',
+        errorStyles: 'h-20 text-red-600 text-sm'
+    }
+    const {boxContainerStyles, errorStyles, inputStyles} = styles
+
     return (
+
         <div className='w-screen h-screen flex justify-center items-center'>
             <form onSubmit={submitHandler} className='h-10/12 p-4 border-4 bg-slate-900 border-slate-100 rounded-xl flex flex-col items-center md:w-2/4 lg:w-1/4 sm:w-11/12'>
 
                 <h2 className='text-blue-500 text-4xl font-bold mb-6'>Sign Up</h2>
 
-                <div className='flex flex-col h-24 text-lg w-2/3'>
+                <div className={boxContainerStyles}>
                     <label>Name:</label>
                     <input
-                    className='bg-slate-700 focus:bg-slate-600 w-full m-auto border rounded-md p-1'
+                    className={inputStyles}
                     type="text"
                     name="name"
                     value={data.name}
                     onChange={changeHandler}
                     onFocus={focusHandler}
                     />
-                    <div className='h-20 text-red-600'>
+                    <div className={errorStyles}>
                         {errors.name && touched.name && <span>{errors.name}</span>}
                     </div>
                 </div>
-                <div className='flex flex-col h-28 text-lg w-2/3'>
+                <div className={boxContainerStyles}>
                     <label>Email:</label>
                     <input
-                    className='bg-slate-700 focus:bg-slate-600 w-full m-auto border rounded-md p-1'
+                    className={inputStyles}
                     type="email"
                     name="email"
                     value={data.email}
                     onChange={changeHandler}
                     onFocus={focusHandler} 
                     />
-                    <div className='h-20 text-red-600'>
+                    <div className={errorStyles}>
                         {errors.email && touched.email && <span>{errors.email}</span>}
                     </div>
                 </div>
-                <div className='flex flex-col h-28 text-lg w-2/3'>
+                <div className={boxContainerStyles}>
                     <label>Password:</label>
                     <input
-                    className='bg-slate-700 focus:bg-slate-600 w-full m-auto border rounded-md p-1'
+                    className={inputStyles}
                     type="password"
                     name="password"
                     value={data.password}
                     onChange={changeHandler}
                     onFocus={focusHandler} 
                     />
-                    <div className='h-20 text-red-600'>
+                    <div className={errorStyles}>
                         {errors.password && touched.password && <span>{errors.password}</span>}
                     </div>
                 </div>
-                <div className='flex flex-col h-28 text-lg w-2/3'>
+                <div className={boxContainerStyles}>
                     <label>Confirm Password:</label>
                     <input
-                    className='bg-slate-700 focus:bg-slate-600 w-full m-auto border rounded-md p-1'
+                    className={inputStyles}
                     type="password"
                     name="confirmPassword"
                     value={data.confirmPassword}
                     onChange={changeHandler}
                     onFocus={focusHandler} 
                     />
-                    <div className='h-20 text-red-600'>
+                    <div className={errorStyles}>
                         {errors.confirmPassword && touched.confirmPassword && <span>{errors.confirmPassword}</span>}
                     </div>
                 </div>
@@ -127,7 +135,7 @@ const SignUp = () => {
                     />
                     
                 </div>
-                <div className='h-20 text-red-600'>
+                <div className={errorStyles}>
                         {errors.isAccepted && touched.isAccepted && <span>{errors.isAccepted}</span>}
                     </div>
                     <div className='flex justify-between p-1 item-center w-8/12 -mt-8'>
