@@ -1,9 +1,8 @@
 import SignUp from './components/SignUp';
-import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="w-screen h-screen bg-slate-800 text-white">
       <SignUp />
     </div>
   );
