@@ -4,7 +4,7 @@ import SignUp from './components/SignUp';
 
 function App() {
   return (
-    <div className="w-screen h-screen bg-slate-800 text-white">
+    <div className="w-screen h-11/12 bg-slate-800 text-white">
 
       <Routes>
         <Route path="/signup" element={<SignUp />}/>

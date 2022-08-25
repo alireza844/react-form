@@ -56,16 +56,16 @@ const SignUp = () => {
     }
 
     const styles = {
-        boxContainerStyles: 'flex flex-col h-24 text-lg w-2/3',
-        inputStyles: 'bg-slate-700 focus:bg-slate-600 w-full m-auto border rounded-md p-1',
-        errorStyles: 'h-20 text-red-600 text-sm'
+        boxContainerStyles: 'flex flex-col h-24 text-lg w-11/12',
+        inputStyles: 'bg-slate-700 focus:bg-slate-600 w-full m-auto border rounded-md p-1 text-base',
+        errorStyles: 'h-20 text-red-600 text-xs'
     }
     const {boxContainerStyles, errorStyles, inputStyles} = styles
 
     return (
 
         <div className='w-screen h-screen flex justify-center items-center'>
-            <form onSubmit={submitHandler} className='h-10/12 p-4 border-4 bg-slate-900 border-slate-100 rounded-xl flex flex-col items-center md:w-2/4 lg:w-1/4 sm:w-11/12'>
+            <form onSubmit={submitHandler} className='h-9/12 p-4 border-4 bg-slate-900 border-slate-100 rounded-xl flex flex-col items-center md:w-2/4 lg:w-1/4 sm:w-11/12'>
 
                 <h2 className='text-blue-500 text-4xl font-bold mb-6'>Sign Up</h2>
 
@@ -125,8 +125,8 @@ const SignUp = () => {
                         {errors.confirmPassword && touched.confirmPassword && <span>{errors.confirmPassword}</span>}
                     </div>
                 </div>
-                <div className='flex h-12 items-center justify-center text-lg w-2/3'>
-                    <label>i Accepted terms of privacy policy</label>
+                <div className='flex h-12 items-center justify-evenly text-lg w-11/12'>
+                    <label className='text-sm'>I Accepted terms of privacy policy</label>
                     <input
                     className='m-1 mt-2 rounded-full w-4 h-4'
                     type="checkbox"
@@ -140,7 +140,7 @@ const SignUp = () => {
                 <div className={errorStyles}>
                         {errors.isAccepted && touched.isAccepted && <span>{errors.isAccepted}</span>}
                     </div>
-                    <div className='flex justify-between p-1 item-center w-8/12 -mt-8'>
+                    <div className='flex justify-between p-1 item-center w-8/12 -mt-16'>
                         <Link to='/login' className='border-2 border-slate-600 p-2 rounded-xl hover:bg-slate-600 hover:border-2 hover:border-slate-400 transition-all'>Login</Link>
                         <button type="submit" className='bg-slate-600 p-2 rounded-xl hover:bg-slate-400 transition-all'>Sign Up</button>
                 </div>
